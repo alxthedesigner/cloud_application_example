@@ -1,8 +1,10 @@
 FROM python:3
 
-COPY ./requirements.txt /cloud_app_example/requirements.txt
+#COPY ./requirements.txt /cloud_app_example/requirements.txt
+COPY ./requirements.txt /requirements.txt
 
-WORKDIR /cloud_app_example
+
+#WORKDIR /cloud_app_example
 
 RUN pip install -r requirements.txt
 
