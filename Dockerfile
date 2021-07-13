@@ -1,6 +1,6 @@
 FROM python:3
 
-COPY ./requirements.txt
+COPY ./requirements.txt /cloud_app_example/requirements.txt
 
 WORKDIR /cloud_app_example
 
