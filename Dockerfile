@@ -11,5 +11,5 @@ COPY . /app
 
 ENTRYPOINT [ "python" ]
 
-#CMD [ "/word_number_app.py" ]
-CMD [ "cloud_application_example/word_number_app.py" ]
+#CMD [ "./word_number_app.py" ]
+CMD [ "/word_number_app.py" ]
