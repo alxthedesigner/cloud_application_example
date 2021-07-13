@@ -24,12 +24,10 @@ def infoDescription():
    word = request.args.get('wrd', '')
    number = request.args.get('num', '')
    doubled = number*2
-   #nummsg1 = "The doubled value of", num, "is", doubled
-   nummsg1 = "The doubled value of" + number + "is" + doubled
+   nummsg1 = "The doubled value of", number, "is" + doubled
 
    wordL = len(word)
-   #wordmsg1 = "Your word has", wordL, "letters"
-   wordmsg1 = "Your word has" + wordL + "letters"
+   wordmsg1 = "Your word has", wordL, "letters"
 
    backwrd = word[::-1]
    if word == backwrd:
