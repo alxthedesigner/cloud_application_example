@@ -9,7 +9,8 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-ENTRYPOINT [ "python" ]
+#ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "word_number_app.py" ]
 
 #CMD [ "./word_number_app.py" ]
-CMD [ "/word_number_app.py" ]
+#CMD [ "/word_number_app.py" ]
