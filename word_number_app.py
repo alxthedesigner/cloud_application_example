@@ -24,24 +24,30 @@ def infoDescription():
    word = request.args.get('wrd', '')
    number = request.args.get('num', '')
    doubled = number*2
-   #print "The doubled value of", num, "is", doubled
+   #nummsg1 = "The doubled value of", num, "is", doubled
+   nummsg1 = "The doubled value of" + num + "is" + doubled
 
    wordL = len(word)
-   wordmsg1 = "Your word has", wordL, "letters"
+   #wordmsg1 = "Your word has", wordL, "letters"
+   wordmsg1 = "Your word has" + wordL + "letters"
 
    backwrd = word[::-1]
    if word == backwrd:
-      wordmsg2 = "Your word is a palindrome! Your word spelled backwards is", backwrd
+      wordmsg2 = "Your word is a palindrome! Your word spelled backwards is" + backwrd
    else:
-      wordmsg2 = "Your word spelled backwards is", backwrd
+      wordmsg2 = "Your word spelled backwards is" + backwrd
 
-   return DESCRIPTIONHTML.format(doubled, wordmsg1, wordmsg2)
+   return DESCRIPTIONHTML.format(nummsg1, wordmsg1, wordmsg2)
 
 
 DESCRIPTIONHTML = """
    <html><body>
-      <h2>Your number doubled is, {0}!</h2>
-         {1}, {2}
+      <h2>Results!</h2>
+         <p>
+            <br>{0}
+            <br>{1}
+            <br>{2}
+         </p>
    </body></html>
    """
 
