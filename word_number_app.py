@@ -4,7 +4,8 @@ from flask import request
 application = Flask(__name__)   #App Instance created
 
 @application.route("/")         #When URL ends in '/', execute method
-  return WORDHTML
+   def home():
+      return WORDHTML
 
   WORDHTML = """
      <html><body>
@@ -22,21 +23,20 @@ application = Flask(__name__)   #App Instance created
   word = request.args.get('wrd', '')
   number = request.args.get('num', '')
   
-  
-def infoDescription():
-    doubled = number*2
-    #print "The doubled value of", num, "is", doubled
-  
-    wordL = len(word)
-    wordmsg1 = "Your word has", wordL, "letters"
+  def infoDescription():
+      doubled = number*2
+      #print "The doubled value of", num, "is", doubled
 
-    backwrd = word[::-1]
-    if word == backwrd:
-        wordmsg2 = "Your word is a palindrome! Your word spelled backwards is", backwrd
-    else:
-        wordmsg2 = "Your word spelled backwards is", backwrd
-    
-    return DESCRIPTIONHTML.format(doubled, wordmsg1, wordmsg2)
+      wordL = len(word)
+      wordmsg1 = "Your word has", wordL, "letters"
+
+      backwrd = word[::-1]
+      if word == backwrd:
+          wordmsg2 = "Your word is a palindrome! Your word spelled backwards is", backwrd
+      else:
+          wordmsg2 = "Your word spelled backwards is", backwrd
+
+      return DESCRIPTIONHTML.format(doubled, wordmsg1, wordmsg2)
   
   DESCRIPTIONHTML = """
      <html><body>
